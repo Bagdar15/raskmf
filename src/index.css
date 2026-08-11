@@ -1,16 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
-  --accent: #842433;
-  --accent-dark: #651724;
+  --accent: #871513;
+  --accent-dark: #540d0b;
   --accent-soft: #ecdde0;
   --ink: #231d1f;
   --muted: #74686b;
   --paper: #f6f2ef;
   --surface: #ffffff;
   --border: #ded4d1;
-  font-family: 'Instrument Sans', Arial, sans-serif;
+  font-family: 'Manrope', Arial, sans-serif;
+  font-optical-sizing: auto;
   color: var(--ink);
   background: var(--paper);
   font-synthesis: none;
@@ -19,7 +20,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; min-width: 320px; }
+body { font-size: 16px; line-height: 1.5; margin: 0; min-width: 320px; }
 a { color: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 
@@ -27,7 +28,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   background: var(--paper);
   display: grid;
   grid-template-columns: minmax(0, 1fr) 520px;
-  height: 760px;
+  height: 780px;
   overflow: hidden;
 }
 
@@ -40,9 +41,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .hero__brand {
   color: var(--accent);
-  font-size: .8rem;
-  font-weight: 600;
-  letter-spacing: .14em;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  line-height: 1.2;
+  text-transform: uppercase;
 }
 
 .hero__brand span { margin: 0 .28em; }
@@ -54,10 +57,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 h1 {
-  font-size: clamp(3.4rem, 6.8vw, 7.2rem);
+  font-size: clamp(3.35rem, 6.5vw, 6.9rem);
   font-weight: 600;
-  letter-spacing: -.065em;
-  line-height: 1.02;
+  letter-spacing: -.052em;
+  line-height: 1.055;
   margin: 0;
   text-wrap: balance;
 }
@@ -66,20 +69,66 @@ h1 span { color: var(--accent); }
 
 .hero__panel {
   background: var(--accent);
-  color: #fff7f5;
-  height: 760px;
+  height: 780px;
   overflow: hidden;
   position: relative;
   width: 520px;
 }
 
-.hero__art {
-  display: block;
+.mosaic {
+  display: grid;
+  gap: 0;
+  overflow: hidden;
 }
 
-.hero__art--desktop { height: 760px; width: 520px; }
-.hero__art--compact { display: none; }
-.hero__mosaic { shape-rendering: crispEdges; }
+.mosaic--portrait {
+  grid-template-columns: repeat(4, 130px);
+  grid-template-rows: repeat(6, 130px);
+  height: 780px;
+  width: 520px;
+}
+
+.mosaic--landscape {
+  display: none;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  height: 100%;
+  width: 100%;
+}
+
+.mosaic__tile {
+  background: var(--tile-color);
+  display: block;
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.mosaic__shape {
+  background: var(--shape-color);
+  display: block;
+  position: absolute;
+}
+
+.mosaic__shape--circle { border-radius: 50%; inset: 18%; }
+.mosaic__shape--circle-large { border-radius: 50%; inset: 0; }
+.mosaic__shape--quarter-top-left,
+.mosaic__shape--quarter-top-right,
+.mosaic__shape--quarter-bottom-right,
+.mosaic__shape--quarter-bottom-left {
+  border-radius: 50%;
+  height: calc(200% + 2px);
+  width: calc(200% + 2px);
+}
+.mosaic__shape--quarter-top-left { bottom: -1px; right: -1px; }
+.mosaic__shape--quarter-top-right { bottom: -1px; left: -1px; }
+.mosaic__shape--quarter-bottom-right { left: -1px; top: -1px; }
+.mosaic__shape--quarter-bottom-left { right: -1px; top: -1px; }
+.mosaic__shape--half-top { border-radius: 999px 999px 0 0; inset: -1px; }
+.mosaic__shape--half-right { border-radius: 0 999px 999px 0; inset: -1px; }
+.mosaic__shape--half-bottom { border-radius: 0 0 999px 999px; inset: -1px; }
+.mosaic__shape--half-left { border-radius: 999px 0 0 999px; inset: -1px; }
 
 .letters {
   background: var(--surface);
@@ -92,10 +141,10 @@ h1 span { color: var(--accent); }
 }
 
 h2 {
-  font-size: clamp(2.7rem, 5vw, 5.2rem);
+  font-size: clamp(2.65rem, 4.7vw, 4.9rem);
   font-weight: 600;
-  letter-spacing: -.06em;
-  line-height: 1;
+  letter-spacing: -.045em;
+  line-height: 1.05;
   margin: 0;
 }
 
@@ -144,9 +193,10 @@ h2 {
 }
 
 h3 {
-  font-size: 1.08rem;
+  font-size: 1rem;
   font-weight: 600;
-  letter-spacing: -.035em;
+  letter-spacing: -.018em;
+  line-height: 1.35;
   margin: 0;
 }
 
@@ -196,23 +246,25 @@ h3 {
 .site-footer__identity {
   align-items: center;
   display: flex;
-  font-size: .78rem;
+  font-size: .74rem;
   font-weight: 600;
   gap: .65em;
-  letter-spacing: .14em;
+  letter-spacing: .105em;
+  line-height: 1.35;
+  text-transform: uppercase;
 }
 
 .site-footer__identity a { align-items: center; color: inherit; display: inline-flex; gap: 7px; text-decoration: none; }
 .site-footer__identity a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .site-footer__identity svg { height: 14px; width: 14px; }
-.site-footer__year { color: #b8adaf; font-size: .76rem; letter-spacing: .08em; }
+.site-footer__year { color: #b8adaf; font-size: .74rem; font-weight: 500; letter-spacing: .06em; }
 
 @media (max-width: 1050px) {
   .hero { display: flex; flex-direction: column; height: auto; }
   .hero__inner { min-height: 690px; }
-  .hero__panel { aspect-ratio: 4 / 1; height: auto; width: 100%; }
-  .hero__art--desktop { display: none; }
-  .hero__art--compact { display: block; height: 100%; width: 100%; }
+  .hero__panel { aspect-ratio: 3 / 2; height: auto; width: 100%; }
+  .mosaic--portrait { display: none; }
+  .mosaic--landscape { display: grid; }
 }
 
 @media (max-width: 900px) {
@@ -222,9 +274,9 @@ h3 {
 @media (max-width: 620px) {
   .hero__inner { min-height: 610px; padding: 27px 24px 30px; position: relative; z-index: 1; }
   .hero__content { padding: 80px 0 95px; }
-  h1 { font-size: clamp(2.9rem, 12.7vw, 3.4rem); line-height: 1.05; }
+  h1 { font-size: clamp(2.85rem, 12.3vw, 3.3rem); letter-spacing: -.047em; line-height: 1.075; }
   .letters { padding-left: 24px; padding-right: 24px; }
-  h2 { font-size: 2.65rem; line-height: 1.04; }
+  h2 { font-size: 2.55rem; line-height: 1.08; }
   .letters__grid { grid-template-columns: 1fr; }
   .letter-card { min-height: 305px; }
   .letter-card__logo { min-height: 200px; }
