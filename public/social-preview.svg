@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f6f2ef"/>
+  <g transform="translate(720)">
+    <rect width="480" height="630" fill="#842433"/>
+    <rect width="160" height="160" fill="#e6b9be"/>
+    <path d="M160 0h160v160A160 160 0 0 1 160 0Z" fill="#c97882"/>
+    <circle cx="400" cy="80" r="80" fill="#f6f2ef"/>
+    <path d="M0 160h160v160A160 160 0 0 1 0 160Z" fill="#f6f2ef"/>
+    <circle cx="240" cy="240" r="52" fill="#e6b9be"/>
+    <rect x="320" y="160" width="160" height="160" fill="#c97882"/>
+    <path d="M320 320h160v160A160 160 0 0 1 320 320Z" fill="#e6b9be"/>
+    <circle cx="80" cy="400" r="80" fill="#c97882"/>
+    <path d="M160 320h160v160A160 160 0 0 1 160 320Z" fill="#f6f2ef"/>
+    <rect y="480" width="160" height="150" fill="#e6b9be"/>
+    <path d="M160 480h160v150A160 160 0 0 1 160 480Z" fill="#c97882"/>
+    <circle cx="400" cy="555" r="75" fill="#f6f2ef"/>
+  </g>
+  <text x="84" y="88" fill="#842433" font-family="Manrope, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="3">RASK  •  MF</text>
+  <text x="80" y="250" fill="#231d1f" font-family="Manrope, Arial, sans-serif" font-size="67" font-weight="600" letter-spacing="-3">
+    <tspan x="80" dy="0">Rekrytering av</tspan>
+    <tspan x="80" dy="79" fill="#842433">studenter</tspan>
+    <tspan x="80" dy="79" fill="#231d1f">till kliniska</tspan>
+    <tspan x="80" dy="79">prövningar</tspan>
+  </text>
+</svg>
