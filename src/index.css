@@ -126,6 +126,15 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .construction__panel .mosaic { grid-area: 1 / 1; }
 
+.construction__panel .mosaic--portrait {
+  aspect-ratio: 2 / 3;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  height: max(100%, 780px);
+  justify-self: center;
+  width: auto;
+}
+
 .hero {
   background: var(--paper);
   display: grid;
